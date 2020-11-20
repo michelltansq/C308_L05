@@ -38,29 +38,16 @@ const PRODUCTS_DATA = [
       'Stretch out on the large sun bed aft while friends lounge in the generously appointed cockpit.',
     picture: require('./img/fairline.jpg'),
   },
-
-  class Boat extends React.Component {
-    render() {
-      return (
-        <View>
-          <Text>{this.props.name}</Text>
-          <Text>{this.props.description}</Text>
-          <Image source={this.props.picture} />
-        </View>
-      );
-    }
-  },
 ];
 
 const BoatList = () => {
-  return PRODUCTS_DATA.map((boat) => {
-    return (
-      <BoatList
-        name={boat.name}
-        description={boat.description}
-        picture={boat.picture}
-      />
-    );
-  });
+  return PRODUCTS_DATA.map((data) => (
+    <View>
+      <Text>
+        {data.name} {data.description}
+      </Text>
+      <Image source={data.picture} />
+    </View>
+  ));
 };
 export default BoatList;
